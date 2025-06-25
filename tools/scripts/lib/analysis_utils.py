@@ -82,11 +82,19 @@ def get_segment_columns(header_row):
     ask_experience_marker = "Categories" # Segments usually start right after Categories
     
     # Check for Ask Opinion first (most distinct end columns before segments)
-    if "Sentiment" in header_row and "Star" in header_row:
-        try:
-            start_index = header_row.index("Sentiment") + 1
-        except ValueError:
-            start_index = None 
+    if "Star" in header_row and ("English Responses" in header_row or "Original Responses" in header_row):
+        # For Ask Opinion, segments may start after "Sentiment" (if present) or after "Original Responses"
+        if "Sentiment" in header_row:
+            try:
+                start_index = header_row.index("Sentiment") + 1
+            except ValueError:
+                start_index = None
+        else:
+            # GD4 style: no Sentiment column, segments after Original Responses
+            try:
+                start_index = header_row.index("Original Responses") + 1
+            except ValueError:
+                start_index = None 
     # Check for Ask Experience
     elif ask_experience_marker in header_row:
         try:
