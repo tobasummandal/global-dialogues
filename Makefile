@@ -3,7 +3,7 @@
 # Variables
 PYTHON := python
 TOOLS_DIR := tools/scripts
-ANALYSIS_DIR := tools/analysis
+ANALYSIS_DIR := tools/scripts
 
 # Colors for terminal output
 BLUE := \033[34m

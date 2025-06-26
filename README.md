@@ -67,7 +67,8 @@ The project involves recurring survey cadences:
 | GD1      | September 2024 | Complete |
 | GD2      | January 2025    | Complete  |
 | GD3      | March 2025    | Complete  |
-| GD4      | May 2025    | Planned  |
+| GD4      | June 2025    | Complete  |
+| GD5      | July 2025    | Planned  |
 
 Data for each completed cadence is stored in its respective folder within `/Data` (e.g., `/Data/GD1`). Detailed descriptions of the data files and columns can be found in `Data/Documentation/DATA_GUIDE.md`.
 
