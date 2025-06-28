@@ -8,6 +8,8 @@ Global Dialogues are recurring surveys where participants answer demographic que
 
 To view the results of the Global Dialogues rounds in a simpler Spreadsheet format, you can view the GD round results in Google Sheets [here](https://drive.google.com/drive/folders/15cT7T_ejIPlacTqBRESiypYyrc3xLHz_?usp=drive_link).
 
+To interact with an ongoing public version of the survey, you can participate in an active demonstration version of the GD4 Survey [here](https://live.remesh.chat/p/b5745715-87c4-4379-b051-36a8dfc72aa3/).
+
 ## Quick Start
 
 Install required packages:
