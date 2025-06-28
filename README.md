@@ -4,7 +4,9 @@ Global Dialogues data and analysis tools
 This repository contains data and analysis tools from the "Global Dialogues" survey project, conducted in collaboration with Remesh.ai, Prolific, and The Collective Intelligence Project.
 
 ## About the Project
-Global Dialogues are recurring surveys where participants answer demographic questions, attitude polls, and open-ended opinion questions. Participants also vote (Agree/Disagree) on a sample of other participants' responses and complete pairwise comparisons of responses.
+Global Dialogues are recurring surveys where participants answer demographic questions, attitude polls, and open-ended opinion questions about the future of AI. Participants also vote (Agree/Disagree) on a sample of other participants' responses and complete pairwise comparisons of responses.
+
+To view the results of the Global Dialogues rounds in a simpler Spreadsheet format, you can view the GD round results in Google Sheets [here](https://drive.google.com/drive/folders/15cT7T_ejIPlacTqBRESiypYyrc3xLHz_?usp=drive_link).
 
 ## Quick Start
 
@@ -25,9 +27,9 @@ For new users, the typical workflow is:
 
 ## Detailed Workflow
 
-For users who prefer direct Python commands or need to understand the underlying processes:
+For users to understand the processes to update Data files and run analysis:
 
-1.  **Download Raw Data:** Obtain the raw CSV export files from Remesh.ai for a given Global Dialogue cadence (e.g., GD3) and place them in the corresponding `Data/GD<N>/` directory.
+1.  **Download Raw Data:** The raw CSV export files from Remesh.ai are downloaded for a given Global Dialogue round (e.g., GD3) as soon as the round is completed and added to the corresponding `Data/GD<N>/` directory.
 
 2.  **Preprocess Data:** Use the Makefile command (recommended) or run scripts directly:
     ```bash
@@ -60,7 +62,7 @@ For users who prefer direct Python commands or need to understand the underlying
 
 ## Data Structure
 
-The project involves recurring survey cadences:
+The project involves recurring survey rounds:
 
 | Dialogue | Time          | Status   |
 |----------|---------------|----------|
@@ -70,7 +72,7 @@ The project involves recurring survey cadences:
 | GD4      | June 2025    | Complete  |
 | GD5      | July 2025    | Planned  |
 
-Data for each completed cadence is stored in its respective folder within `/Data` (e.g., `/Data/GD1`). Detailed descriptions of the data files and columns can be found in `Data/Documentation/DATA_GUIDE.md`.
+Data for each completed round is stored in its respective folder within `/Data` (e.g., `/Data/GD1`). Detailed descriptions of the data files and columns can be found in `Data/Documentation/DATA_GUIDE.md`.
 
 ### Large Embedding Data
 
@@ -117,9 +119,9 @@ global-dialogues/
 
 *Note: These embedding files are included in `.gitignore` to prevent accidental commits.*
 
-### Data Files per Cadence
+### Data Files per Round
 
-Each cadence folder contains the following data files:
+Each round folder contains the following data files:
 
 #### Primary Analysis Files (Processed)
 
