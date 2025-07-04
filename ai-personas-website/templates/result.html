@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}Your AI Dialogue Persona Result{% endblock %}
+
+{% block head %}
+<style>
+.result-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.result-card {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 20px;
+    padding: 3rem;
+}
+
+.result-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    box-shadow: var(--neon-glow);
+}
+
+.result-name {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--light-text);
+    margin-bottom: 1rem;
+}
+
+.result-description {
+    font-size: 1.1rem;
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.share-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.share-btn-twitter { background: #1DA1F2; color: white; }
+.share-btn-facebook { background: #1877F2; color: white; }
+.share-btn-linkedin { background: #0A66C2; color: white; }
+.share-btn-copy { background: var(--gradient-1); color: white; }
+
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="result-container">
+        <div class="result-card">
+            <div class="result-avatar" style="background: var(--gradient-{{ (result.persona.id % 5) + 1 }});">
+                <i class="fas fa-user-astronaut"></i>
+            </div>
+            <h1 class="result-name">{{ result.persona.name }}</h1>
+            <p class="result-description">{{ result.persona.description }}</p>
+            
+            <div class="share-buttons">
+                <a href="#" class="share-btn share-btn-twitter" id="share-twitter">
+                    <i class="fab fa-twitter"></i>
+                    Share on Twitter
+                </a>
+                <a href="#" class="share-btn share-btn-facebook" id="share-facebook">
+                    <i class="fab fa-facebook"></i>
+                    Share on Facebook
+                </a>
+                <a href="#" class="share-btn share-btn-linkedin" id="share-linkedin">
+                    <i class="fab fa-linkedin"></i>
+                    Share on LinkedIn
+                </a>
+                <a href="#" class="share-btn share-btn-copy" id="share-copy">
+                    <i class="fas fa-copy"></i>
+                    Copy Link
+                </a>
+            </div>
+            
+            <div>
+                <a href="{{ url_for('quiz') }}" class="btn btn-outline-primary me-3">
+                    <i class="fas fa-redo me-2"></i>
+                    Take Quiz Again
+                </a>
+                <a href="{{ url_for('personas') }}" class="btn btn-primary">
+                    <i class="fas fa-users me-2"></i>
+                    Explore All Personas
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const personaName = '{{ result.persona.name }}';
+    const shareUrl = window.location.href;
+    const shareText = `I just discovered my AI Dialogue Persona: ${personaName}! Find out yours at ${shareUrl}`;
+    
+    document.getElementById('share-twitter').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
+    document.getElementById('share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+    document.getElementById('share-linkedin').href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+    
+    document.getElementById('share-copy').addEventListener('click', function(e) {
+        e.preventDefault();
+        navigator.clipboard.writeText(shareUrl).then(() => {
+            this.innerHTML = '<i class="fas fa-check me-2"></i>Copied!';
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-copy me-2"></i>Copy Link';
+            }, 2000);
+        });
+    });
+});
+</script>
+{% endblock %}

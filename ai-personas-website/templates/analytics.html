@@ -1,0 +1,240 @@
+{% extends "base.html" %}
+
+{% block title %}AI Dialogue Personas - Analytics Dashboard{% endblock %}
+
+{% block head %}
+<style>
+.analytics-hero {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+    border-color: var(--primary-color);
+}
+
+.stat-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--light-text);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--muted-text);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.chart-container {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.chart-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Analytics Hero Section -->
+<section class="analytics-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="display-3 fw-bold mb-3">
+                    Analytics <span class="text-gradient">Dashboard</span>
+                </h1>
+                <p class="lead mb-4">
+                    Explore the data behind the AI Dialogue Personas project, including 
+                    participant statistics and quiz results.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Analytics Section -->
+<section class="py-5">
+    <div class="container">
+        <!-- Key Statistics -->
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <h3 class="stat-number">{{ total_participants }}</h3>
+                <p class="stat-label">Total Participants</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-question-circle"></i></div>
+                <h3 class="stat-number">{{ quiz_takers }}</h3>
+                <p class="stat-label">Quiz Takers</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-brain"></i></div>
+                <h3 class="stat-number">{{ personas|length }}</h3>
+                <p class="stat-label">Discovered Personas</p>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="chart-container">
+                    <h3 class="chart-title">Original Persona Distribution</h3>
+                    <canvas id="original-distribution-chart"></canvas>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="chart-container">
+                    <h3 class="chart-title">Quiz Taker Persona Distribution</h3>
+                    <canvas id="quiz-distribution-chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Original Persona Distribution Chart
+    const originalCtx = document.getElementById('original-distribution-chart').getContext('2d');
+    const originalData = {
+        labels: [{% for persona in personas.values() %}'{{ persona.name }}',{% endfor %}],
+        datasets: [{
+            label: 'Original Distribution',
+            data: [{% for persona in personas.values() %}{{ persona.percentage }},{% endfor %}],
+            backgroundColor: [
+                'rgba(255, 107, 107, 0.7)',
+                'rgba(78, 205, 196, 0.7)',
+                'rgba(69, 183, 209, 0.7)',
+                'rgba(150, 206, 180, 0.7)',
+                'rgba(255, 234, 167, 0.7)'
+            ],
+            borderColor: [
+                '#FF6B6B',
+                '#4ECDC4',
+                '#45B7D1',
+                '#96CEB4',
+                '#FFEAA7'
+            ],
+            borderWidth: 1
+        }]
+    };
+    
+    new Chart(originalCtx, {
+        type: 'doughnut',
+        data: originalData,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        color: '#f8fafc'
+                    }
+                },
+                title: {
+                    display: false
+                }
+            }
+        }
+    });
+
+    // Quiz Taker Persona Distribution Chart
+    const quizCtx = document.getElementById('quiz-distribution-chart').getContext('2d');
+    const quizData = {
+        labels: [{% for persona_id, count in persona_distribution.items() %}'{{ personas[persona_id].name }}',{% endfor %}],
+        datasets: [{
+            label: 'Quiz Taker Distribution',
+            data: [{% for count in persona_distribution.values() %}{{ count }},{% endfor %}],
+            backgroundColor: [
+                'rgba(255, 107, 107, 0.7)',
+                'rgba(78, 205, 196, 0.7)',
+                'rgba(69, 183, 209, 0.7)',
+                'rgba(150, 206, 180, 0.7)',
+                'rgba(255, 234, 167, 0.7)'
+            ],
+            borderColor: [
+                '#FF6B6B',
+                '#4ECDC4',
+                '#45B7D1',
+                '#96CEB4',
+                '#FFEAA7'
+            ],
+            borderWidth: 1
+        }]
+    };
+    
+    new Chart(quizCtx, {
+        type: 'bar',
+        data: quizData,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#f8fafc'
+                    },
+                    grid: {
+                        color: 'rgba(248, 250, 252, 0.1)'
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: '#f8fafc'
+                    },
+                    grid: {
+                        display: false
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: false
+                }
+            }
+        }
+    });
+});
+</script>
+{% endblock %}

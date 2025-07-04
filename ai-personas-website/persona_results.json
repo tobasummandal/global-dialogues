@@ -1,0 +1,88 @@
+{
+  "personas": {
+    "2": {
+      "id": 2,
+      "name": "The Balanced Moderator",
+      "size": 818,
+      "percentage": 41.10552763819095,
+      "characteristics": {
+        "consensus_alignment": 0.6692728356003191,
+        "participation_level": 0.8972004889975552,
+        "avg_sentiment": 0.11181118949477942,
+        "avg_text_length": 0.17893465479101178,
+        "vote_consistency": 0.5423275543415821,
+        "engagement_depth": 0.20023435004965068
+      },
+      "description": "This persona maintains balanced perspective on issues, maintains neutral emotional tone, balances brevity with depth, highly active in discussions."
+    },
+    "1": {
+      "id": 1,
+      "name": "The Cautious Skeptic",
+      "size": 570,
+      "percentage": 28.643216080402013,
+      "characteristics": {
+        "consensus_alignment": 0.6639965051668825,
+        "participation_level": 0.3536140350877192,
+        "avg_sentiment": 0.06736555878189057,
+        "avg_text_length": 0.18592949735449738,
+        "vote_consistency": 0.5429833606003339,
+        "engagement_depth": 0.2021076327788877
+      },
+      "description": "This persona maintains balanced perspective on issues, maintains neutral emotional tone, balances brevity with depth, selective in participation."
+    },
+    "3": {
+      "id": 3,
+      "name": "The Deep Thinker",
+      "size": 392,
+      "percentage": 19.698492462311556,
+      "characteristics": {
+        "consensus_alignment": 0.8909042211625744,
+        "participation_level": 0.43989795918367347,
+        "avg_sentiment": 0.09979330771868053,
+        "avg_text_length": 0.175031746031746,
+        "vote_consistency": 0.7091794429258276,
+        "engagement_depth": 0.20381758852389606
+      },
+      "description": "This persona tends to agree with majority opinions, maintains neutral emotional tone, balances brevity with depth, moderately engaged."
+    },
+    "0": {
+      "id": 0,
+      "name": "The Optimistic Architect",
+      "size": 208,
+      "percentage": 10.452261306532664,
+      "characteristics": {
+        "consensus_alignment": 0.7037339743589743,
+        "participation_level": 0.5081730769230769,
+        "avg_sentiment": 0.11524004725169007,
+        "avg_text_length": 0.48699679487179487,
+        "vote_consistency": 0.5614698527190252,
+        "engagement_depth": 0.2008413461538462
+      },
+      "description": "This persona tends to agree with majority opinions, maintains neutral emotional tone, balances brevity with depth, moderately engaged."
+    },
+    "4": {
+      "id": 4,
+      "name": "The Pragmatic Realist",
+      "size": 2,
+      "percentage": 0.10050251256281408,
+      "characteristics": {
+        "consensus_alignment": 0.8333333333333333,
+        "participation_level": 0.08499999999999999,
+        "avg_sentiment": 0.14247685185185185,
+        "avg_text_length": 0.22583333333333333,
+        "vote_consistency": 0.7642977396044841,
+        "engagement_depth": 2.5
+      },
+      "description": "This persona tends to agree with majority opinions, maintains neutral emotional tone, contributes detailed thoughts and analysis, selective in participation."
+    }
+  },
+  "feature_importance": {
+    "consensus_alignment": "How often participant agrees with majority",
+    "participation_level": "Overall activity level in discussions",
+    "avg_sentiment": "Emotional tone of contributions",
+    "avg_text_length": "Typical length of written responses",
+    "vote_consistency": "Consistency in voting patterns",
+    "engagement_depth": "Ratio of thoughtful contributions to simple votes"
+  },
+  "total_participants": 1990
+}

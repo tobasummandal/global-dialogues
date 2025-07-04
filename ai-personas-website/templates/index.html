@@ -1,0 +1,276 @@
+{% extends "base.html" %}
+
+{% block title %}AI Dialogue Personas - Discover Your AI Conversation Style{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-background">
+        <canvas id="neural-network"></canvas>
+    </div>
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1 class="display-3 fw-bold mb-4">
+                        Discover Your
+                        <span class="text-gradient">AI Dialogue Persona</span>
+                    </h1>
+                    <p class="lead mb-4">
+                        Through advanced clustering analysis of global AI conversations, 
+                        we've identified distinct dialogue personas. Take our quiz to discover 
+                        which one matches your unique conversation style.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="{{ url_for('quiz') }}" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-play me-2"></i>
+                            Take the Quiz
+                        </a>
+                        <a href="{{ url_for('personas') }}" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-users me-2"></i>
+                            Explore Personas
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-visual">
+                    <div class="persona-orbit">
+                        <div class="central-node">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        {% for persona_id, persona in personas.items() %}
+                        <div class="orbit-node" data-persona="{{ persona_id }}">
+                            <div class="node-content">
+                                <span class="node-label">{{ persona.name }}</span>
+                                <span class="node-percentage">{{ "%.1f"|format(persona.percentage) }}%</span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number">{{ personas|length }}</h3>
+                        <p class="stat-label">Unique Personas</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number">1,990</h3>
+                        <p class="stat-label">Participants Analyzed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number">4</h3>
+                        <p class="stat-label">Global Dialogues</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number">6</h3>
+                        <p class="stat-label">Analyzed Features</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Persona Preview Section -->
+<section class="persona-preview py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center mb-5">
+                <h2 class="display-4 fw-bold mb-3">Meet the AI Dialogue Personas</h2>
+                <p class="lead text-muted">
+                    Each persona represents a unique pattern of engagement in AI conversations, 
+                    discovered through machine learning analysis of global dialogue data.
+                </p>
+            </div>
+        </div>
+        
+        <div class="row">
+            {% for persona_id, persona in personas.items() %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="persona-card" data-persona="{{ persona_id }}">
+                    <div class="persona-header">
+                        <div class="persona-avatar">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <h4 class="persona-name">{{ persona.name }}</h4>
+                        <p class="persona-percentage">{{ "%.1f"|format(persona.percentage) }}% of participants</p>
+                    </div>
+                    <div class="persona-body">
+                        <p class="persona-description">{{ persona.description }}</p>
+                        <div class="persona-traits">
+                            <div class="trait">
+                                <span class="trait-label">Consensus Alignment</span>
+                                <div class="trait-bar">
+                                    <div class="trait-fill" style="width: {{ (persona.characteristics.consensus_alignment * 100)|round }}%"></div>
+                                </div>
+                            </div>
+                            <div class="trait">
+                                <span class="trait-label">Participation Level</span>
+                                <div class="trait-bar">
+                                    <div class="trait-fill" style="width: {{ (persona.characteristics.participation_level * 100)|round }}%"></div>
+                                </div>
+                            </div>
+                            <div class="trait">
+                                <span class="trait-label">Sentiment</span>
+                                <div class="trait-bar">
+                                    <div class="trait-fill" style="width: {{ ((persona.characteristics.avg_sentiment + 1) * 50)|round }}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="persona-footer">
+                        <a href="{{ url_for('personas') }}" class="btn btn-outline-primary btn-sm">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="display-4 fw-bold mb-3">Ready to Discover Your Persona?</h2>
+                <p class="lead mb-4">
+                    Take our scientifically-backed quiz to find out which AI dialogue persona 
+                    matches your conversation style and thinking patterns.
+                </p>
+                <a href="{{ url_for('quiz') }}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-rocket me-2"></i>
+                    Start Your Journey
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Initialize neural network animation
+document.addEventListener('DOMContentLoaded', function() {
+    initNeuralNetwork();
+});
+
+function initNeuralNetwork() {
+    const canvas = document.getElementById('neural-network');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+    
+    const nodes = [];
+    const connections = [];
+    
+    // Create nodes
+    for (let i = 0; i < 50; i++) {
+        nodes.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 2,
+            vy: (Math.random() - 0.5) * 2,
+            radius: Math.random() * 3 + 1
+        });
+    }
+    
+    // Create connections
+    for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+            const dist = Math.sqrt(
+                Math.pow(nodes[i].x - nodes[j].x, 2) + 
+                Math.pow(nodes[i].y - nodes[j].y, 2)
+            );
+            if (dist < 150) {
+                connections.push({ a: i, b: j, opacity: 1 - dist / 150 });
+            }
+        }
+    }
+    
+    function animate() {
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.1)';
+        ctx.fillRect(0, 0, width, height);
+        
+        // Update nodes
+        nodes.forEach(node => {
+            node.x += node.vx;
+            node.y += node.vy;
+            
+            if (node.x < 0 || node.x > width) node.vx *= -1;
+            if (node.y < 0 || node.y > height) node.vy *= -1;
+        });
+        
+        // Draw connections
+        connections.forEach(conn => {
+            const nodeA = nodes[conn.a];
+            const nodeB = nodes[conn.b];
+            
+            ctx.strokeStyle = `rgba(59, 130, 246, ${conn.opacity * 0.3})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(nodeA.x, nodeA.y);
+            ctx.lineTo(nodeB.x, nodeB.y);
+            ctx.stroke();
+        });
+        
+        // Draw nodes
+        nodes.forEach(node => {
+            ctx.fillStyle = 'rgba(59, 130, 246, 0.6)';
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+            ctx.fill();
+        });
+        
+        requestAnimationFrame(animate);
+    }
+    
+    animate();
+    
+    // Resize handler
+    window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    });
+}
+</script>
+{% endblock %}

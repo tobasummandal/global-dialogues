@@ -1,0 +1,484 @@
+{% extends "base.html" %}
+
+{% block title %}AI Dialogue Personas - Meet the Archetypes{% endblock %}
+
+{% block head %}
+<style>
+.personas-hero {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.persona-detail-card {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.persona-detail-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.persona-detail-card:hover::before {
+    opacity: 1;
+}
+
+.persona-detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
+    border-color: var(--primary-color);
+}
+
+.persona-detail-card:nth-child(1)::before { background: var(--gradient-1); }
+.persona-detail-card:nth-child(2)::before { background: var(--gradient-2); }
+.persona-detail-card:nth-child(3)::before { background: var(--gradient-3); }
+.persona-detail-card:nth-child(4)::before { background: var(--gradient-4); }
+.persona-detail-card:nth-child(5)::before { background: var(--gradient-5); }
+
+.persona-detail-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.persona-detail-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    margin-right: 1.5rem;
+    box-shadow: var(--neon-glow);
+    flex-shrink: 0;
+}
+
+.persona-detail-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--light-text);
+}
+
+.persona-detail-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.persona-stat {
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.persona-detail-description {
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.characteristics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.characteristic-item {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.characteristic-label {
+    font-size: 0.9rem;
+    color: var(--muted-text);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.characteristic-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.characteristic-bar {
+    height: 4px;
+    background: rgba(59, 130, 246, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.characteristic-fill {
+    height: 100%;
+    background: var(--gradient-1);
+    border-radius: 2px;
+    transition: width 0.5s ease;
+}
+
+.persona-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.comparison-section {
+    background: rgba(15, 23, 42, 0.5);
+    padding: 5rem 0;
+    margin-top: 3rem;
+}
+
+.comparison-table {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.comparison-table table {
+    width: 100%;
+    margin: 0;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.comparison-table th {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.comparison-table td {
+    color: var(--light-text);
+}
+
+.comparison-table tr:hover {
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.persona-name-cell {
+    text-align: left !important;
+    font-weight: 600;
+}
+
+.value-bar {
+    display: inline-block;
+    width: 60px;
+    height: 6px;
+    background: rgba(59, 130, 246, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+
+.value-fill {
+    height: 100%;
+    background: var(--gradient-1);
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .persona-detail-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .persona-detail-avatar {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .persona-detail-stats {
+        justify-content: center;
+    }
+    
+    .characteristics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .persona-actions {
+        justify-content: center;
+    }
+    
+    .comparison-table {
+        overflow-x: auto;
+    }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="personas-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="display-3 fw-bold mb-3">
+                    Meet the <span class="text-gradient">AI Dialogue Personas</span>
+                </h1>
+                <p class="lead mb-4">
+                    Discover the five distinct archetypes that emerge from global AI conversations, 
+                    each representing unique patterns of engagement and thinking.
+                </p>
+                <a href="{{ url_for('quiz') }}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-search me-2"></i>
+                    Find Your Persona
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Personas Detail Section -->
+<section class="py-5">
+    <div class="container">
+        {% for persona_id, persona in personas.items() %}
+        <div class="persona-detail-card">
+            <div class="persona-detail-header">
+                <div class="persona-detail-avatar" style="background: var(--gradient-{{ (loop.index % 5) + 1 }});">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                <div class="persona-detail-info">
+                    <h3>{{ persona.name }}</h3>
+                    <div class="persona-detail-stats">
+                        <span class="persona-stat">{{ persona.size }} participants</span>
+                        <span class="persona-stat">{{ "%.1f"|format(persona.percentage) }}% of population</span>
+                    </div>
+                    <p class="persona-detail-description">{{ persona.description }}</p>
+                </div>
+            </div>
+            
+            <div class="characteristics-grid">
+                <div class="characteristic-item">
+                    <div class="characteristic-label">Consensus Alignment</div>
+                    <div class="characteristic-value">{{ "%.1f"|format(persona.characteristics.consensus_alignment * 100) }}%</div>
+                    <div class="characteristic-bar">
+                        <div class="characteristic-fill" style="width: {{ (persona.characteristics.consensus_alignment * 100)|round }}%"></div>
+                    </div>
+                </div>
+                
+                <div class="characteristic-item">
+                    <div class="characteristic-label">Participation Level</div>
+                    <div class="characteristic-value">{{ "%.1f"|format(persona.characteristics.participation_level * 100) }}%</div>
+                    <div class="characteristic-bar">
+                        <div class="characteristic-fill" style="width: {{ (persona.characteristics.participation_level * 100)|round }}%"></div>
+                    </div>
+                </div>
+                
+                <div class="characteristic-item">
+                    <div class="characteristic-label">Sentiment Score</div>
+                    <div class="characteristic-value">
+                        {% if persona.characteristics.avg_sentiment > 0 %}+{% endif %}{{ "%.3f"|format(persona.characteristics.avg_sentiment) }}
+                    </div>
+                    <div class="characteristic-bar">
+                        <div class="characteristic-fill" style="width: {{ ((persona.characteristics.avg_sentiment + 1) * 50)|round }}%"></div>
+                    </div>
+                </div>
+                
+                <div class="characteristic-item">
+                    <div class="characteristic-label">Text Length</div>
+                    <div class="characteristic-value">{{ "%.1f"|format(persona.characteristics.avg_text_length * 100) }}%</div>
+                    <div class="characteristic-bar">
+                        <div class="characteristic-fill" style="width: {{ (persona.characteristics.avg_text_length * 100)|round }}%"></div>
+                    </div>
+                </div>
+                
+                <div class="characteristic-item">
+                    <div class="characteristic-label">Vote Consistency</div>
+                    <div class="characteristic-value">{{ "%.1f"|format(persona.characteristics.vote_consistency * 100) }}%</div>
+                    <div class="characteristic-bar">
+                        <div class="characteristic-fill" style="width: {{ (persona.characteristics.vote_consistency * 100)|round }}%"></div>
+                    </div>
+                </div>
+                
+                <div class="characteristic-item">
+                    <div class="characteristic-label">Engagement Depth</div>
+                    <div class="characteristic-value">{{ "%.3f"|format(persona.characteristics.engagement_depth) }}</div>
+                    <div class="characteristic-bar">
+                        <div class="characteristic-fill" style="width: {{ (persona.characteristics.engagement_depth * 50)|round }}%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="persona-actions">
+                <a href="{{ url_for('quiz') }}" class="btn btn-primary">
+                    <i class="fas fa-question-circle me-2"></i>
+                    See If You Match
+                </a>
+                <button class="btn btn-outline-light" onclick="sharePersona('{{ persona.name }}')">
+                    <i class="fas fa-share me-2"></i>
+                    Share This Persona
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Comparison Section -->
+<section class="comparison-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center mb-5">
+                <h2 class="display-4 fw-bold mb-3">Persona Comparison</h2>
+                <p class="lead text-muted">
+                    Compare the characteristics of all AI dialogue personas side by side
+                </p>
+            </div>
+        </div>
+        
+        <div class="comparison-table">
+            <table class="table table-dark mb-0">
+                <thead>
+                    <tr>
+                        <th>Persona</th>
+                        <th>Population</th>
+                        <th>Consensus Alignment</th>
+                        <th>Participation Level</th>
+                        <th>Sentiment Score</th>
+                        <th>Engagement Depth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for persona_id, persona in personas.items() %}
+                    <tr>
+                        <td class="persona-name-cell">
+                            <div class="d-flex align-items-center">
+                                <div class="me-2" style="width: 20px; height: 20px; border-radius: 50%; background: var(--gradient-{{ (loop.index % 5) + 1 }});"></div>
+                                {{ persona.name }}
+                            </div>
+                        </td>
+                        <td>{{ "%.1f"|format(persona.percentage) }}%</td>
+                        <td>
+                            {{ "%.1f"|format(persona.characteristics.consensus_alignment * 100) }}%
+                            <div class="value-bar">
+                                <div class="value-fill" style="width: {{ (persona.characteristics.consensus_alignment * 100)|round }}%"></div>
+                            </div>
+                        </td>
+                        <td>
+                            {{ "%.1f"|format(persona.characteristics.participation_level * 100) }}%
+                            <div class="value-bar">
+                                <div class="value-fill" style="width: {{ (persona.characteristics.participation_level * 100)|round }}%"></div>
+                            </div>
+                        </td>
+                        <td>
+                            {% if persona.characteristics.avg_sentiment > 0 %}+{% endif %}{{ "%.3f"|format(persona.characteristics.avg_sentiment) }}
+                            <div class="value-bar">
+                                <div class="value-fill" style="width: {{ ((persona.characteristics.avg_sentiment + 1) * 50)|round }}%"></div>
+                            </div>
+                        </td>
+                        <td>
+                            {{ "%.3f"|format(persona.characteristics.engagement_depth) }}
+                            <div class="value-bar">
+                                <div class="value-fill" style="width: {{ (persona.characteristics.engagement_depth * 50)|round }}%"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="display-4 fw-bold mb-3">Which Persona Are You?</h2>
+                <p class="lead mb-4">
+                    Take our scientifically-backed quiz to discover which AI dialogue persona 
+                    matches your unique conversation style and thinking patterns.
+                </p>
+                <a href="{{ url_for('quiz') }}" class="btn btn-primary btn-lg me-3">
+                    <i class="fas fa-play me-2"></i>
+                    Take the Quiz
+                </a>
+                <a href="{{ url_for('analytics') }}" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-chart-bar me-2"></i>
+                    View Analytics
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function sharePersona(personaName) {
+    const shareUrl = window.location.origin + window.location.pathname;
+    const shareText = `Check out the ${personaName} AI Dialogue Persona! Discover which persona matches your conversation style: ${shareUrl}`;
+    
+    if (navigator.share) {
+        navigator.share({
+            title: `${personaName} - AI Dialogue Persona`,
+            text: shareText,
+            url: shareUrl
+        });
+    } else {
+        // Fallback to clipboard
+        navigator.clipboard.writeText(shareText).then(() => {
+            alert('Persona link copied to clipboard!');
+        });
+    }
+}
+
+// Animate characteristic bars on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const fills = entry.target.querySelectorAll('.characteristic-fill');
+            fills.forEach(fill => {
+                const width = fill.style.width;
+                fill.style.width = '0%';
+                setTimeout(() => {
+                    fill.style.width = width;
+                }, 100);
+            });
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.persona-detail-card').forEach(card => {
+    observer.observe(card);
+});
+</script>
+{% endblock %}
