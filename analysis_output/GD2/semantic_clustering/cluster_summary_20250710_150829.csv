@@ -1,0 +1,22 @@
+cluster_id,size,percentage,sample_response_1,sample_response_2,sample_response_3,run_id,timestamp
+0,9748,44.70329267174172,"Can you make a step-by-step procedure of making a carrot cake? 
+
+Give some of the best idea or tip for a man who have date for the first time. 
+
+Create a short story about a girl who found out that she's adopted. ",assumes a specific role,"Write a short meal plan for 5 days for two person. Budget is 200 weekly and meal should be pork free. Also use bold heading and simila font. Include breakfast, lunch and dinner with a snack.",fcbf2944,20250710_150829
+1,5684,26.066220306337705,I would rather have a more casual response. It makes the ai seems more like a human and it's easier to understand for most people. I would like it to get straight to the point unless I specifically asked for a detailed explanation. A specific role doesn't matter to me.,"I prefer it to be more formal but it depends on the specific situation.It's better to get straight to the point at first and only provide detailed explanations after further asked.
+
+I don't want an AI asistent to take on any role because to being AI asistent is already It's role.
+
+
+It's good to focus on certain areas of expertise","AI assistant should judge the tone and answer in semi-formal/formal tone with a concise explanation, focusing on areas of expertise by using examples.",fcbf2944,20250710_150829
+2,4781,21.92515821333578,"More formal in your answers, since in the context in which I use AI, it is for questions with a more elaborate answer. You should offer detailed explanations and at the end a small conclusion that goes straight to the point, however, details are needed to be able to reach that conclusion. I would not like you to assume a specific role, only that of being an AI assistant. I would like you to focus on the topics I am asking you and not digress into other topics that may not help.","When I work with an AI assistent, I would prefer more formal responses. I would prefer to have detailed explanation instead of getting straight to the point to get a clear idea on how we have arrived at a solution. I would prefer that the AI assistent take the role of mentor who guides you in the correct path. I would suggest AI to focus on the area of expertise as they can give the best response for the certain topics.
+
+","I would prefer it to provide detailed explanations, but first, it would be good if the AI bot could check certain parameters with me before generating a comprehensive reply (which may turn not to be irrelevant to my use case). ",fcbf2944,20250710_150829
+3,1593,7.305328808584793,"Anything.
+
+Explain in detail.
+
+Not required.
+
+Yes.",Yes,any,fcbf2944,20250710_150829
