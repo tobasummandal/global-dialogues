@@ -8,3 +8,5 @@ python-dotenv
 aiohttp
 pydantic
 asyncio
+plotly
+scipy
