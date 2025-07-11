@@ -16,7 +16,7 @@ RESET := \033[0m
         preprocess-all preprocess-tags analyze-all \
         consensus divergence indicators tags \
         download-embeddings download-all-embeddings \
-        run-thematic-ranking \
+        run-thematic-ranking run-semantic-clustering run-enhanced-analysis \
         pri pri-llm export-unreliable \
         preview-csvs
 
@@ -53,6 +53,10 @@ help:
 	@echo "$(BLUE)Advanced Analysis Commands:$(RESET)"
 	@echo "  $(GREEN)make run-thematic-ranking GD=<N>$(RESET) - Run thematic ranking for GD<N> (requires API key and embeddings)"
 	@echo "  $(GREEN)make run-thematic-ranking$(RESET) - Show thematic ranking options"
+	@echo "  $(GREEN)make run-semantic-clustering GD=<N>$(RESET) - Run k-means clustering for GD<N> (requires embeddings)"
+	@echo "  $(GREEN)make run-semantic-clustering GD=<N> CLUSTERS=<K>$(RESET) - Run clustering with specific K clusters"
+	@echo "  $(GREEN)make run-enhanced-analysis GD=<N>$(RESET) - Enhanced analysis with PRI integration and indicators"
+	@echo "  $(GREEN)make run-enhanced-analysis GD=<N> INDICATORS=true$(RESET) - Analyze indicators only with PRI"
 	@echo ""
 	@echo "$(BLUE)Utilities:$(RESET)"
 	@echo "  $(GREEN)make preview-csvs GD=<N>$(RESET)  - Preview all CSV files in GD<N> directory"
@@ -237,6 +241,58 @@ run-thematic-ranking:
 	fi
 	$(PYTHON) $(ANALYSIS_DIR)/thematic_ranking.py --gd $(GD)
 
+# Semantic clustering using k-means
+run-semantic-clustering:
+	@if [ -z "$(GD)" ]; then \
+		echo "$(BLUE)Running semantic clustering analysis...$(RESET)"; \
+		echo "$(YELLOW)NOTE: This requires GD<N>_embeddings.json$(RESET)"; \
+		echo "$(BLUE)Please specify which Global Dialogue to analyze:$(RESET)"; \
+		echo "  $(GREEN)make run-semantic-clustering GD=<N>$(RESET) - Run k-means clustering for GD<N>"; \
+		echo "  $(GREEN)make run-semantic-clustering GD=<N> CLUSTERS=<K>$(RESET) - Run with specific number of clusters"; \
+		exit 1; \
+	fi
+	@echo "$(BLUE)Running semantic clustering analysis for GD$(GD)...$(RESET)"
+	@if [ ! -f Data/GD$(GD)/GD$(GD)_embeddings.json ]; then \
+		echo "$(RED)Error: Data/GD$(GD)/GD$(GD)_embeddings.json not found$(RESET)"; \
+		echo "$(YELLOW)Please download this file first: make download-embeddings GD=$(GD)$(RESET)"; \
+		exit 1; \
+	fi
+	@if [ -n "$(CLUSTERS)" ]; then \
+		$(PYTHON) $(ANALYSIS_DIR)/semantic_clustering.py --gd $(GD) --clusters $(CLUSTERS); \
+	else \
+		$(PYTHON) $(ANALYSIS_DIR)/semantic_clustering.py --gd $(GD); \
+	fi
+
+# Enhanced semantic analysis with PRI and indicators
+run-enhanced-analysis:
+	@if [ -z "$(GD)" ]; then \
+		echo "$(BLUE)Running enhanced semantic analysis...$(RESET)"; \
+		echo "$(YELLOW)NOTE: This integrates PRI scores and indicator analysis$(RESET)"; \
+		echo "$(BLUE)Please specify which Global Dialogue to analyze:$(RESET)"; \
+		echo "  $(GREEN)make run-enhanced-analysis GD=<N>$(RESET) - Full analysis for GD<N>"; \
+		echo "  $(GREEN)make run-enhanced-analysis GD=<N> INDICATORS=true$(RESET) - Indicators only"; \
+		echo "  $(GREEN)make run-enhanced-analysis GD=<N> PRI_FILTER=3.0$(RESET) - Filter by PRI score"; \
+		exit 1; \
+	fi
+	@echo "$(BLUE)Running enhanced semantic analysis for GD$(GD)...$(RESET)"
+	@if [ ! -f Data/GD$(GD)/GD$(GD)_embeddings.json ]; then \
+		echo "$(RED)Error: Data/GD$(GD)/GD$(GD)_embeddings.json not found$(RESET)"; \
+		echo "$(YELLOW)Please download this file first: make download-embeddings GD=$(GD)$(RESET)"; \
+		exit 1; \
+	fi
+	@# Build command with options
+	@CMD="$(PYTHON) $(ANALYSIS_DIR)/enhanced_semantic_analysis.py --gd $(GD) --include-pri --pri-weighted"; \
+	if [ "$(INDICATORS)" = "true" ]; then \
+		CMD="$$CMD --indicators-only"; \
+	fi; \
+	if [ -n "$(PRI_FILTER)" ]; then \
+		CMD="$$CMD --min-pri $(PRI_FILTER)"; \
+	fi; \
+	if [ -n "$(CLUSTERS)" ]; then \
+		CMD="$$CMD --clusters $(CLUSTERS)"; \
+	fi; \
+	$$CMD
+
 # CSV preview using variables
 preview-csvs:
 	@if [ -z "$(GD)" ]; then \
@@ -256,3 +312,9 @@ clean:
 	@find . -name "processed_data.pkl" -delete
 	@find . -name "*.bak" -delete
 	@echo "$(GREEN)Cleanup complete!$(RESET)"
+
+# Run thematic fear analysis
+run-fear-analysis:
+	@echo "🚀 Running Thematic Fear Analysis for GD$(GD)"
+	@if [ -z "$(GD)" ]; then echo "❌ Please specify GD number: make run-fear-analysis GD=3"; exit 1; fi
+	cd tools/scripts && python thematic_fear_analysis.py $(GD) $(if $(MIN_PRI),--min-pri $(MIN_PRI)) $(if $(OUTPUT_DIR),--output-dir $(OUTPUT_DIR))
