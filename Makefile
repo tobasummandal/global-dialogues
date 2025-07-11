@@ -18,7 +18,7 @@ RESET := \033[0m
         download-embeddings download-all-embeddings \
         run-thematic-ranking run-semantic-clustering run-enhanced-analysis \
         pri pri-llm export-unreliable \
-        preview-csvs
+        preview-csvs run-fear-analysis run-combined-fear-analysis run-persona-development run-comprehensive-persona-analysis
 
 # Default target
 help:
@@ -61,6 +61,10 @@ help:
 	@echo "$(BLUE)Utilities:$(RESET)"
 	@echo "  $(GREEN)make preview-csvs GD=<N>$(RESET)  - Preview all CSV files in GD<N> directory"
 	@echo "  $(GREEN)make clean$(RESET)                - Clean up cache and temporary files"
+	@echo "  $(GREEN)make run-fear-analysis GD=<N>$(RESET) - Run thematic fear analysis for GD<N>"
+	@echo "  $(GREEN)make run-combined-fear-analysis$(RESET) - Run combined thematic fear analysis across GD1, GD2, and GD3"
+	@echo "  $(GREEN)make run-persona-development$(RESET) - Analyze persona development process"
+	@echo "  $(GREEN)make run-comprehensive-persona-analysis$(RESET) - Comprehensive persona analysis (All 10 features: PRI, fear, thematic fears, etc.)"
 
 # Preprocessing commands using variables
 preprocess:
@@ -318,3 +322,18 @@ run-fear-analysis:
 	@echo "🚀 Running Thematic Fear Analysis for GD$(GD)"
 	@if [ -z "$(GD)" ]; then echo "❌ Please specify GD number: make run-fear-analysis GD=3"; exit 1; fi
 	cd tools/scripts && python thematic_fear_analysis.py $(GD) $(if $(MIN_PRI),--min-pri $(MIN_PRI)) $(if $(OUTPUT_DIR),--output-dir $(OUTPUT_DIR))
+
+# Combined thematic fear analysis
+run-combined-fear-analysis:
+	@echo "Running combined thematic fear analysis..."
+	cd tools/scripts && python thematic_fear_analysis_combined.py
+
+# Persona development process analysis  
+run-persona-development:
+	@echo "Running persona development process analysis..."
+	cd tools/scripts && python persona_development_analysis.py
+
+# Comprehensive persona analysis (All 10 features from persona development)
+run-comprehensive-persona-analysis:
+	@echo "Running comprehensive persona analysis with all 10 features..."
+	cd tools/scripts && python comprehensive_persona_analysis.py
