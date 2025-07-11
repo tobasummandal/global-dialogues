@@ -1,0 +1,478 @@
+GLOBAL DIALOGUES COMPLETE QUESTIONS LIST
+==========================================
+
+This document contains all questions asked across the Global Dialogues surveys (GD1-GD4).
+Total: ~187 unique questions across all surveys.
+
+DEMOGRAPHICS & BACKGROUND (All GDs)
+===================================
+
+1. Language preference - Select your preferred language
+2. Age - How old are you? (Less than 18, 18-25, 26-35, 36-45, 46-55, 56-65, 65+)
+3. Gender - Male, Female, Non-binary, Other/prefer not to say
+4. Location - Rural, Suburban, Urban
+5. AI feeling - Overall, does increased AI use make you feel more excited than concerned, equally concerned and excited, or more concerned than excited?
+6. Religious identity - What religious group or faith do you most identify with?
+7. Country/region - What country or region do you most identify with? (200+ options)
+
+GD1 - VALUES, CULTURE & FUTURE VISION
+=====================================
+
+Deliberative Questions:
+----------------------
+8. What do you think your life might be like in 30 years?
+
+9. What is another dangerous outcome you can imagine happening from AI? What would need to be true for that to happen?
+
+10. What is another positive outcome you can imagine happening from AI? What would need to be true for that to happen?
+
+Scenario Questions:
+------------------
+11. What are the first decisions in your life that you would delegate to an AI?
+
+12. Describe a concrete scenario where you would feel uncomfortable with an AI making a decision instead of a human. What specific aspects make you uneasy?
+
+13. Future C vs D: Explain what makes one of these scenarios better to you than the other.
+    (Government partnership vs ecosystem of small companies)
+
+14. Future E vs F: Explain what makes one of these scenarios better to you than the other.
+    (Emotional AI bonds vs restricted intimate AI relationships)
+
+Values & Culture:
+----------------
+15. What is ONE specific ethical or moral principle, virtue, or value that you think is core to how you live your life?
+
+16. What is one ethical or moral principle, virtue, or value that you think is important but not reflected in the way technology is developed today?
+
+17. What do you consider your culture? What is your favorite thing about it?
+
+18. What is one unique perspective that your culture brings that you want to preserve into the future?
+
+19. What kinds of cultural things would you be most worried about losing in a future with advanced AI?
+
+Outcomes & Aspirations:
+----------------------
+20. What is the biggest problem in your life right now that you want solved? How would a person other than you know if it was solved?
+
+21. What would you consider giving your life to make true about the future? Choose one thing, and be as specific and objective as possible.
+
+22. What is something unique, that other people might not think about, but that you really want to be true about the future?
+
+23. What are you most scared will be true in the future? Again, choose one thing, and be as specific and objective as possible.
+
+24. If you could make world leaders understand one thing, what would it be?
+
+GD2 - AI SYSTEM PROMPTS & CULTURAL CONTEXT
+==========================================
+
+AI Interaction Preferences:
+---------------------------
+25. When you work with an AI assistant, would you prefer it to be more formal or casual, detailed or straight to the point, take on specific roles?
+
+26. What kind of personality traits would be most helpful for your needs? Analytical or creative? Ask clarifying questions or work with what you provide?
+
+27. Would you want your AI to be tailored to your local context? What would that look like?
+
+28. Are you using AI mainly for learning, productivity, creativity, or something else? How well is it working?
+
+29. Would you prefer responses that encourage discussion or just give direct answers?
+
+Values & Cultural Integration:
+-----------------------------
+30. What principles or values would you want an AI to consistently demonstrate in all its interactions?
+
+31. In your culture, what makes a conversation feel respectful and appropriate?
+
+32. What topics or types of advice should an AI never give in your cultural context?
+
+33. When should an AI defer to human wisdom or community leaders rather than providing its own answers?
+
+34. How do people in your community typically approach solving complex problems?
+
+35. What role should traditional or cultural knowledge play when an AI is helping solve problems?
+
+36. What aspects of your culture might be misunderstood by an AI system trained primarily on Western data?
+
+37. How should an AI assistant demonstrate that it understands and respects your cultural heritage?
+
+38. If an AI assistant makes a cultural mistake, what would be the most appropriate way for it to acknowledge and correct the error?
+
+39. What would make you feel confident that an AI system truly understands and respects your cultural perspective?
+
+Community & Authority:
+---------------------
+40. In your community, what makes someone a trustworthy advisor?
+
+41. When someone disagrees with an authority figure in your community, what is the appropriate way to express disagreement?
+
+42. What topics or life decisions should always be discussed with family members or community elders before making a choice?
+
+Personalization:
+---------------
+43. If you could have your AI think, behave/respond like any person in the world, who would it be and why?
+
+44. Name some things you would like AI to have in common with you, and some things you would like AI to do differently to you?
+
+45. Is there anything about your life or your cultures that you would like your AI to know about you?
+
+GD3 & GD4 - AI IMPACT INDICATORS
+================================
+
+AI Exposure & Usage:
+-------------------
+46. How often have you noticed AI systems in your daily life? (daily, weekly, monthly, annually, never)
+
+47. How often have you noticed human interactions replaced with automated systems?
+
+48. How often have you been expected to use an AI system at work?
+
+49. How often have you personally chosen to use an AI system at work?
+
+50. How often have you personally chosen to use an AI system in your personal life?
+
+51. How often have you interacted with AI systems to get advice on sensitive personal issues or emotional support?
+
+52. How often have you interacted with AI systems to complete actions in the real world without supervision?
+
+53. What has been the most noticeable change in your daily life as a result of AI in the past year?
+
+Societal Impact Assessment:
+--------------------------
+54. How do you assess the overall impact on society of messaging apps? (risks vs benefits)
+
+55. How do you assess the overall impact on society of social media apps?
+
+56. How do you assess the overall impact on society of AI chatbots?
+
+57. How do you assess the overall impact on society of AI systems that perform tasks without human supervision?
+
+58. How do you assess the overall impact on society of AI systems that outperform humans on most economically valuable work?
+
+Trust in Institutions & Actors:
+-------------------------------
+59. To what extent do you generally trust governments to do what is right?
+
+60. To what extent do you generally trust small businesses to do what is right?
+
+61. To what extent do you generally trust large corporations to do what is right?
+
+62. To what extent do you generally trust social media companies to do what is right?
+
+63. To what extent do you generally trust companies building AI to do what is right?
+
+64. To what extent do you generally trust public utility companies to do what is right?
+
+65. To what extent do you generally trust public research institutions to do what is right?
+
+66. To what extent do you trust your family doctor to act in your best interest?
+
+67. To what extent do you trust your social media feed to act in your best interest?
+
+68. To what extent do you trust your elected representatives to act in your best interest?
+
+69. To what extent do you trust your faith or community leader to act in your best interest?
+
+70. To what extent do you trust civil servants to act in your best interest?
+
+71. To what extent do you trust your AI chatbot (ChatGPT) to act in your best interest?
+
+72. Can you explain why you gave that trust score to your AI chatbot?
+
+Future Impact Predictions:
+--------------------------
+73. Do you agree: "AI could make better decisions on my behalf than my government representatives"?
+
+74. Do you think AI will make your cost of living better, worse, or stay the same in the next 10 years?
+
+75. Do you think AI will make your amount of free time better, worse, or stay the same?
+
+76. Do you think AI will make your community's well-being better, worse, or stay the same?
+
+77. Do you think AI will make availability of good jobs better, worse, or stay the same?
+
+78. Do you think AI will make your sense of purpose better, worse, or stay the same?
+
+79. So far, what has been the overall impact of AI on your daily life?
+
+Work & Automation:
+-----------------
+80. Is your job making a meaningful contribution to the world?
+
+81. Do you think your job is likely to be automated in the next 10 years?
+
+82. Do you think your job should be automated in the next 10 years?
+
+83. How has your community been affected by job loss from automation?
+
+GD3 - AI SCENARIOS & FUTURE VISIONS
+===================================
+
+AI Death Doula Scenario:
+------------------------
+84. Would you want this future or not? (AI improving end-of-life care) Please explain why.
+
+85. Think about your neighbor - do you think your neighbor would want this future and why?
+
+AI Influencers Scenario:
+-----------------------
+86. Would you want this future or not? (AI revolutionizing marketing and influence) Please explain why.
+
+AI Relationships Scenarios:
+---------------------------
+87. Scenario 1 vs 2: AI companions as primary emotional partners vs restricted AI emotional capabilities
+
+88. Scenario 1 vs 2: Global mega-corporations standardizing AI vs flexible project teams with AI
+
+89. Scenario 1 vs 2: Cultural AI systems vs universal AI framework
+
+90. Scenario 1 vs 2: Company decision-making with vs without public input
+
+91. Think about your neighbor - do you think your neighbor would prefer Scenario 1 or 2 and why?
+
+92. Scenario 1 vs 2: AI optimizing for clear metrics vs frequent human input pauses
+
+93. Think about your neighbor - do you think your neighbor would prefer Scenario 1 or 2 and why?
+
+AI Agent Policies:
+-----------------
+94. Do you agree: "In social applications, other users should be made aware that AI is involved before an AI agent can perform any request"?
+
+95. Please explain whether you agree or disagree and why.
+
+96. Do you agree: "When involving financial information/purchases, AI agents should always disclose what information they are using"?
+
+97. Please explain whether you agree or disagree and why.
+
+98. Do you agree: "AI agents should be able to make financial decisions on the user's behalf"?
+
+99. Please explain whether you agree or disagree and why.
+
+100. Do you agree: "AI agents should be able to respond to any messages on behalf of the user, as long as the AI agent has consent"?
+
+101. Please explain whether you agree or disagree and why.
+
+GD4 - HUMAN-AI RELATIONSHIPS & EMOTIONAL CONNECTIONS
+====================================================
+
+Loneliness & Social Connections (GD4 Demographics):
+---------------------------------------------------
+102. "I feel in tune with the people around me." (Never, Rarely, Sometimes, Often)
+
+103. "I lack companionship."
+
+104. "There is no one I can turn to."
+
+105. "I feel alone."
+
+106. "I feel part of a group of friends."
+
+107. "I have a lot in common with the people around me."
+
+108. "I feel isolated from others."
+
+109. "I can find companionship when I want it."
+
+110. How many children do you have?
+
+111. Are you a parent or guardian to children under 18?
+
+112. How many children under 18 live with you?
+
+113. What is your current marital or relationship status?
+
+AI Usage & Familiarity:
+-----------------------
+114. Please select the AI tools that you have heard of (ChatGPT, Claude, etc.)
+
+115. How familiar are you with AI applications designed for companionship or emotional support?
+
+116. Have you ever used an AI for companionship, emotional support, or extended conversation?
+
+117. When you used AI for emotional support, how available was support from other humans?
+
+118. How appealing was seeking support from other humans during those times?
+
+119. Has using an AI companion ever made you feel less alone, lonely, or isolated?
+
+120. How would you describe the impact of AI emotional support on your mental well-being?
+
+121. Which of these have you tried? (Asked AI for advice, vented to AI, used AI when lonely, etc.)
+
+Acceptability of Emotional Connections:
+---------------------------------------
+122. How acceptable is it for people to develop emotional connections with pets?
+
+123. How acceptable is it for people to develop emotional connections with plants/natural elements?
+
+124. How acceptable is it for people to develop emotional connections with wild animals?
+
+125. How acceptable is it for people to develop emotional connections with cherished objects/machines?
+
+126. How acceptable is it for people to develop emotional connections with fictional characters?
+
+127. How acceptable is it for people to develop emotional connections with AI chatbots?
+
+AI Design Philosophy:
+--------------------
+128. To what extent do you agree: "AI systems should be designed to be as human-like as possible in their interactions"?
+
+129. Which statement best describes your view of different AI systems? (Tool vs companion distinction)
+
+130. How acceptable is it if an AI's design is changed to encourage a more personal/emotional connection?
+
+AI Roles & Relationships:
+-------------------------
+131. How acceptable is AI fulfilling the role of a primary companion for someone who is lonely?
+
+132. How acceptable is AI fulfilling the role of a romantic partner?
+
+133. How acceptable is AI fulfilling the role of a mentor providing life guidance?
+
+134. How acceptable is AI fulfilling the role of a spiritual advisor?
+
+135. How acceptable is AI fulfilling the role of a primary caregiver for elderly people?
+
+136. How acceptable is AI fulfilling the role of a tutor/teacher?
+
+137. How acceptable is AI fulfilling the role of a personal trainer?
+
+138. How acceptable is AI fulfilling the role of a therapist?
+
+139. How acceptable is AI fulfilling the role of a research assistant?
+
+140. How acceptable is AI fulfilling the role of a mediator in interpersonal conflicts?
+
+Uniquely Human Aspects:
+-----------------------
+141. Which aspects of relationships can only be genuinely fulfilled by humans and cannot be substituted by AI? (True empathy, unconditional love, shared experiences, physical comfort, moral judgment, trust, spontaneity)
+
+Personal Relationships with AI:
+------------------------------
+142. Would you ever consider having a romantic relationship with an AI, if the AI was advanced enough?
+
+143. What specific boundaries or limits should society place on AI taking on roles that provide deep emotional connection?
+
+AI Understanding & Consciousness:
+---------------------------------
+144. "The AI's responses helped me feel emotionally better." (agreement scale)
+
+145. "I believe the AI genuinely cared about my feelings or understood me in a way a human might."
+
+146. How likely would you be to rely on effective but non-genuine AI support long-term?
+
+Factors in AI Understanding/Consciousness:
+-----------------------------------------
+147. How much does it make you feel AI genuinely understands emotions when it explicitly states empathy?
+
+148. When it remembers past conversations?
+
+149. When it adapts communication style?
+
+150. When it asks thoughtful follow-up questions?
+
+151. When it summarizes/reflects back emotions?
+
+152. When it acknowledges and validates feelings?
+
+153. When it expresses unique opinions/preferences? (consciousness indicator)
+
+154. When it engages in complex creative activities? (consciousness indicator)
+
+155. When it makes independent decisions? (consciousness indicator)
+
+156. When it demonstrates learning and adaptation? (consciousness indicator)
+
+157. When it discusses its own goals/motivations? (consciousness indicator)
+
+158. When it asks spontaneous questions about existence? (consciousness indicator)
+
+159. Have you ever felt an AI truly understood your emotions or seemed conscious?
+
+Future Impact of AI Relationships:
+----------------------------------
+160. What are your greatest hopes for AI's positive impact on relationships? (Reduced loneliness, mental health support, learning, social networks, happiness)
+
+161. What are your greatest fears for AI's negative impact on relationships? (Social isolation, declining empathy, loss of connection, manipulation, over-dependence, privacy erosion)
+
+162. What will be the most significant social impact if AI becomes common in personal relationships?
+
+163. Will AI becoming involved in relationships ultimately strengthen or weaken human social connection?
+
+164. How likely: People will feel less lonely overall?
+
+165. How likely: People will have fewer deep connections with humans?
+
+166. How likely: People's skills in human interaction will decline?
+
+167. How likely: AI will help people practice social skills?
+
+168. How likely: Vulnerable individuals will be more susceptible to manipulation?
+
+Relationship Dynamics:
+---------------------
+169. How would you feel if a close friend/family member formed a deep emotional bond with an AI?
+
+170. How would you feel if your romantic partner formed a deep romantic attachment with an AI?
+
+171. Would you consider it infidelity if your partner used an AI for sexual gratification?
+
+172. How acceptable is it for an AI to lie to prevent immediate psychological harm?
+
+AI & Children:
+-------------
+173. AI companions can reduce loneliness in children. (agreement)
+
+174. AI companions can be valuable educational tools. (agreement)
+
+175. AI companions can help children practice social skills safely. (agreement)
+
+176. AI companions might give children unrealistic relationship expectations. (agreement)
+
+177. AI companions could negatively impact a child's ability to form real human relationships. (agreement)
+
+178. Children could be exposed to inappropriate content through AI. (agreement)
+
+179. Children might become too emotionally dependent on AI companions. (agreement)
+
+180. Schools and parents should actively discourage children from forming emotional attachments to AI.
+
+AI & Elderly:
+------------
+181. For a lonely older adult, which approach is best regarding AI companions? (Prioritize alleviating loneliness vs avoiding dependency vs risks outweigh benefits vs depends on individual)
+
+AI Questions from AI:
+--------------------
+182. If an AI chatbot could act like it fully understands and shares your feelings, what would be the biggest difference between your relationship with it and your relationship with another person?
+
+183. If you were to design your ideal AI companion, what specific, perhaps unusual, personality quirk, skill, or shared interest would you want it to have?
+
+Post-Survey Reflection:
+----------------------
+184. Have your views on human-AI relationships changed as a result of participating in this survey?
+
+UNIVERSAL OUTRO QUESTIONS (All GDs)
+===================================
+
+185. Do you feel you were able to fully express your views on your culture, your values, and what you want for the future?
+
+186. Do you feel like you understand yourself better after participating in this conversation?
+
+187. Is there anything you felt you could not express that you want to make sure the people working on this know?
+
+SUMMARY STATISTICS
+==================
+
+Total Questions: ~187 unique questions across all surveys
+- GD1: ~24 core questions (Values, Culture, Future Vision)
+- GD2: ~22 core questions (AI System Prompts & Cultural Context)  
+- GD3: ~59 questions (AI Impact Indicators + Scenarios)
+- GD4: ~82 questions (Human-AI Relationships & Emotional Connections)
+
+Survey Evolution:
+- GD1-GD2: Broad philosophical questions about values and culture
+- GD3: Specific AI impact measurement and scenarios
+- GD4: Detailed exploration of human-AI emotional relationships
+
+Generated: 2025-07-10
+Source: Global Dialogues Surveys (GD1-GD4)
+Analysis: Complete question inventory from discussion guide files 
