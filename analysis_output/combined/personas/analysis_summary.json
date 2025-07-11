@@ -1,0 +1,51 @@
+{
+  "analysis_type": "Comprehensive Persona Analysis",
+  "timestamp": "2025-07-11T14:36:10.767012",
+  "total_participants": 59542,
+  "num_personas": 5,
+  "features_used": [
+    "fear_index",
+    "PRI_Score",
+    "cosine_similarity",
+    "economic_job_loss_fear",
+    "surveillance_control_fear",
+    "social_isolation_fear",
+    "safety_security_fear",
+    "cultural_values_fear",
+    "technology_dependence_fear",
+    "response_length_norm"
+  ],
+  "silhouette_score": 0.5274204020458116,
+  "dataset_distribution": {
+    "GD2": 22042,
+    "GD1": 20994,
+    "GD3": 16506
+  },
+  "persona_summary": {
+    "persona_0": {
+      "name": "The Balanced Dependency Participant",
+      "size": 3947,
+      "percentage": 6.6
+    },
+    "persona_1": {
+      "name": "The Balanced Social Participant",
+      "size": 35344,
+      "percentage": 59.4
+    },
+    "persona_2": {
+      "name": "The Consistent Social Responder",
+      "size": 13241,
+      "percentage": 22.2
+    },
+    "persona_3": {
+      "name": "The Balanced Security Participant",
+      "size": 2023,
+      "percentage": 3.4
+    },
+    "persona_4": {
+      "name": "The Consistent Cultural Responder",
+      "size": 4987,
+      "percentage": 8.4
+    }
+  }
+}

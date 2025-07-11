@@ -1,0 +1,117 @@
+{
+  "persona_0": {
+    "name": "The Balanced Dependency Participant",
+    "description": "relatively optimistic about AI; displays variable response patterns; provides brief, focused responses; particularly focused on technology dependence issues",
+    "size": 3947,
+    "percentage": 6.62893419770918,
+    "features": {
+      "fear_index": 0.07526547805093506,
+      "PRI_Score": 0.4276672428030834,
+      "cosine_similarity": 0.7,
+      "economic_job_loss_fear": 0.03171680192650389,
+      "surveillance_control_fear": 0.13959544460784545,
+      "social_isolation_fear": 0.09835734819638361,
+      "safety_security_fear": 0.012211077712758445,
+      "cultural_values_fear": 0.011734446393444845,
+      "technology_dependence_fear": 0.15797774946867416,
+      "response_length_norm": 0.10207075239968467
+    },
+    "dataset_distribution": {
+      "GD1": 2785,
+      "GD3": 859,
+      "GD2": 303
+    }
+  },
+  "persona_1": {
+    "name": "The Balanced Social Participant",
+    "description": "relatively optimistic about AI; displays variable response patterns; provides brief, focused responses; particularly focused on social connection and isolation",
+    "size": 35344,
+    "percentage": 59.35977965133855,
+    "features": {
+      "fear_index": 0.0015732335135588992,
+      "PRI_Score": 0.04403997360494554,
+      "cosine_similarity": 0.6999999999999998,
+      "economic_job_loss_fear": 0.0022802557276863614,
+      "surveillance_control_fear": 0.00045308195358175743,
+      "social_isolation_fear": 0.0032255574158199076,
+      "safety_security_fear": 0.0005747039216330194,
+      "cultural_values_fear": 0.0021790856227806516,
+      "technology_dependence_fear": 0.0007267164398516992,
+      "response_length_norm": 0.04106616768959176
+    },
+    "dataset_distribution": {
+      "GD2": 15819,
+      "GD3": 10014,
+      "GD1": 9511
+    }
+  },
+  "persona_2": {
+    "name": "The Consistent Social Responder",
+    "description": "relatively optimistic about AI; displays variable response patterns; provides brief, focused responses; particularly focused on social connection and isolation",
+    "size": 13241,
+    "percentage": 22.238084041516913,
+    "features": {
+      "fear_index": 0.04663585176212273,
+      "PRI_Score": 0.28633620288257156,
+      "cosine_similarity": 0.7000000000000001,
+      "economic_job_loss_fear": 0.08875662998561296,
+      "surveillance_control_fear": 0.0014285439583720673,
+      "social_isolation_fear": 0.18011390630103183,
+      "safety_security_fear": 0.002160504435784079,
+      "cultural_values_fear": 0.004778964318462332,
+      "technology_dependence_fear": 0.002576561573473088,
+      "response_length_norm": 0.0791725014496391
+    },
+    "dataset_distribution": {
+      "GD1": 5844,
+      "GD3": 4643,
+      "GD2": 2754
+    }
+  },
+  "persona_3": {
+    "name": "The Balanced Security Participant",
+    "description": "relatively optimistic about AI; displays variable response patterns; provides brief, focused responses; particularly focused on safety and security risks",
+    "size": 2023,
+    "percentage": 3.397601692922643,
+    "features": {
+      "fear_index": 0.06738929569500375,
+      "PRI_Score": 0.38806612499243404,
+      "cosine_similarity": 0.7,
+      "economic_job_loss_fear": 0.03314491630909845,
+      "surveillance_control_fear": 0.02354840076582472,
+      "social_isolation_fear": 0.08656817569874718,
+      "safety_security_fear": 0.22992382400398445,
+      "cultural_values_fear": 0.013240213996918758,
+      "technology_dependence_fear": 0.01791024339544892,
+      "response_length_norm": 0.09071078658794009
+    },
+    "dataset_distribution": {
+      "GD1": 1154,
+      "GD3": 564,
+      "GD2": 305
+    }
+  },
+  "persona_4": {
+    "name": "The Consistent Cultural Responder",
+    "description": "relatively optimistic about AI; displays variable response patterns; provides brief, focused responses; particularly focused on cultural and value preservation",
+    "size": 4987,
+    "percentage": 8.375600416512714,
+    "features": {
+      "fear_index": 0.06009071907239553,
+      "PRI_Score": 0.33535675392829933,
+      "cosine_similarity": 0.7000000000000001,
+      "economic_job_loss_fear": 0.007989741482920169,
+      "surveillance_control_fear": 0.001469037580061989,
+      "social_isolation_fear": 0.08910648453106057,
+      "safety_security_fear": 0.0017243388248882109,
+      "cultural_values_fear": 0.2585753632204199,
+      "technology_dependence_fear": 0.0016793487950223208,
+      "response_length_norm": 0.07081551736868233
+    },
+    "dataset_distribution": {
+      "GD2": 2861,
+      "GD1": 1700,
+      "GD3": 426
+    }
+  }
+}
