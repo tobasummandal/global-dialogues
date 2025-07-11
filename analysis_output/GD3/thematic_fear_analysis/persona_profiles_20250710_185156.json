@@ -1,0 +1,219 @@
+{
+  "persona_0": {
+    "name": "The Anxious Traditionalist",
+    "size": 99,
+    "percentage": 16.5,
+    "avg_fear_index": 0.2851687051458148,
+    "avg_pri_score": 0.7102525252525252,
+    "dominant_themes": {
+      "faith and religion": 99
+    },
+    "fear_intensity_dist": {
+      "none": 98,
+      "mild": 1
+    },
+    "top_fear_keywords": {
+      "questioning": 1
+    },
+    "sample_responses": [
+      "No, we are in the same community and faith.",
+      "2 BECAUSE,EACH RELIGION OR PLACE HAS DIFFERENT BELIEFS AND ETHICS.",
+      "1. They are old-fashioned and devoutly religious."
+    ],
+    "theme_fear_scores": {
+      "economic_job_loss": 0.010101010101010102,
+      "surveillance_control": 0.003367003367003367,
+      "social_isolation": 0.003787878787878788,
+      "safety_security": 0.0022446689113355778,
+      "cultural_values": 0.09848484848484848,
+      "technology_dependence": 0.0
+    }
+  },
+  "persona_1": {
+    "name": "The Economic Pragmatist",
+    "size": 100,
+    "percentage": 16.666666666666664,
+    "avg_fear_index": 0.3488548667171273,
+    "avg_pri_score": 0.7563249999999999,
+    "dominant_themes": {
+      "safety and security concerns": 100
+    },
+    "fear_intensity_dist": {
+      "none": 85,
+      "mild": 13,
+      "moderate": 2
+    },
+    "top_fear_keywords": {
+      "concern": 7,
+      "cautious": 5,
+      "scared": 1,
+      "fear": 1,
+      "uncomfortable": 1
+    },
+    "sample_responses": [
+      "Privacy and security matters",
+      "agree for safety reasons",
+      "For safety, integrity, and security "
+    ],
+    "theme_fear_scores": {
+      "economic_job_loss": 0.014444444444444444,
+      "surveillance_control": 0.02,
+      "social_isolation": 0.005,
+      "safety_security": 0.05555555555555556,
+      "cultural_values": 0.0025,
+      "technology_dependence": 0.00125
+    }
+  },
+  "persona_2": {
+    "name": "The Privacy Guardian",
+    "size": 8,
+    "percentage": 1.3333333333333335,
+    "avg_fear_index": 0.44609985413226294,
+    "avg_pri_score": 0.7932812499999999,
+    "dominant_themes": {
+      "human-AI relationships and collaboration": 7,
+      "faith and religion": 1
+    },
+    "fear_intensity_dist": {
+      "none": 7,
+      "mild": 1
+    },
+    "top_fear_keywords": {
+      "concern": 1
+    },
+    "sample_responses": [
+      "Thinking about my neighbor (an elderly Christian lady), I believe that she would not like this future, precisely because of the ethical dilemmas. For example, I, who am younger, can understand the benefits and risks and am willing to take them. Religions must also be taken into consideration, although I do not have one, other people do, as is the case with my neighbor, and I believe that she would not like decisions such as death to be made by artificial intelligence.",
+      "My previous discomfort with AI in other contexts\u2014like the AI Death Doula, AI Influencers, and AI emotional companions\u2014stems from a similar concern: I don\u2019t want AI to dominate or depersonalize deeply human experiences. Scenario 2 keeps AI in a supportive role, handling mundane tasks while leaving room for human creativity and collaboration. This balance ensures I can maintain my independence and focus on meaningful, creative work without feeling constrained by an AI-driven corporate system. ",
+      "Scenario 2 is preferable because it preserves the authenticity of human relationships and ensures that emotional connections remain meaningful and real. While emotionally attuned AI could offer support, over-reliance on AI for companionship could weaken human bonds and social skills. Maintaining AI as tools rather than emotional partners ensures that people continue to seek and value real human connections while still benefiting from AI\u2019s practical support."
+    ],
+    "theme_fear_scores": {
+      "economic_job_loss": 0.013888888888888888,
+      "surveillance_control": 0.0,
+      "social_isolation": 0.3125,
+      "safety_security": 0.013888888888888888,
+      "cultural_values": 0.03125,
+      "technology_dependence": 0.171875
+    }
+  },
+  "persona_3": {
+    "name": "The Overwhelmed Observer",
+    "size": 100,
+    "percentage": 16.666666666666664,
+    "avg_fear_index": 0.4162845316276471,
+    "avg_pri_score": 0.7330027777777778,
+    "dominant_themes": {
+      "governance and regulation of AI": 100
+    },
+    "fear_intensity_dist": {
+      "none": 97,
+      "mild": 2,
+      "moderate": 1
+    },
+    "top_fear_keywords": {
+      "concern": 3,
+      "cautious": 1
+    },
+    "sample_responses": [
+      "Regulation of AI is a grey area, and we don\u2019t know if it could go wrong",
+      "how are this AI technologies regulated? there are no clear guidelines on this matter.",
+      "Will AI be positively regulated forever? The globalization of AI may be difficult."
+    ],
+    "theme_fear_scores": {
+      "economic_job_loss": 0.01,
+      "surveillance_control": 0.023333333333333334,
+      "social_isolation": 0.01375,
+      "safety_security": 0.01888888888888889,
+      "cultural_values": 0.01125,
+      "technology_dependence": 0.00625
+    }
+  },
+  "persona_4": {
+    "name": "The Cautious Optimist",
+    "size": 100,
+    "percentage": 16.666666666666664,
+    "avg_fear_index": 0.2958690286649708,
+    "avg_pri_score": 0.7009856060606061,
+    "dominant_themes": {
+      "economic impacts and jobs": 100
+    },
+    "fear_intensity_dist": {
+      "none": 97,
+      "mild": 3
+    },
+    "top_fear_keywords": {
+      "concern": 3
+    },
+    "sample_responses": [
+      "because it will create job opportunities to some people",
+      " as long as there are still a decent number of people employed in that field and have jobs, it doesnt seem that bad",
+      "job opportunities will be more"
+    ],
+    "theme_fear_scores": {
+      "economic_job_loss": 0.056666666666666664,
+      "surveillance_control": 0.0011111111111111111,
+      "social_isolation": 0.0,
+      "safety_security": 0.003333333333333333,
+      "cultural_values": 0.0075,
+      "technology_dependence": 0.00125
+    }
+  },
+  "persona_5": {
+    "name": "The Tech-Dependent Worrier",
+    "size": 93,
+    "percentage": 15.5,
+    "avg_fear_index": 0.41285623261697457,
+    "avg_pri_score": 0.7293580389144904,
+    "dominant_themes": {
+      "human-AI relationships and collaboration": 93
+    },
+    "fear_intensity_dist": {
+      "none": 91,
+      "mild": 1,
+      "moderate": 1
+    },
+    "top_fear_keywords": {
+      "concern": 1,
+      "alarmed": 1
+    },
+    "sample_responses": [
+      "Scenario 1 \n\nHuman beings and AI should collaborate on tasks to ensure efficiency and effectiveness in delivery of tasks.",
+      "I would love to see a balanced mix of human-AI interaction. We should not focus only on AI and should not leave out human factors. As it's humans who have built AI. The more they are in interaction the more will be a better relationship and trust.",
+      "Scenario 2 , it advocates for alignment and collaboration between AI models and Human beings."
+    ],
+    "theme_fear_scores": {
+      "economic_job_loss": 0.011947431302270013,
+      "surveillance_control": 0.0011947431302270011,
+      "social_isolation": 0.05779569892473118,
+      "safety_security": 0.005973715651135006,
+      "cultural_values": 0.005376344086021506,
+      "technology_dependence": 0.0
+    }
+  },
+  "persona_6": {
+    "name": "The Social Connector",
+    "size": 100,
+    "percentage": 16.666666666666664,
+    "avg_fear_index": 0.3510823581764681,
+    "avg_pri_score": 0.7170833333333334,
+    "dominant_themes": {
+      "cultural integrity and diversity": 100
+    },
+    "fear_intensity_dist": {
+      "none": 100
+    },
+    "top_fear_keywords": {},
+    "sample_responses": [
+      "1 since cultural diversity would be maintained",
+      "1 ....as it upholds and acknowledges importance of the different cultures",
+      "1. Respect for different cultures is necessary"
+    ],
+    "theme_fear_scores": {
+      "economic_job_loss": 0.008888888888888889,
+      "surveillance_control": 0.0022222222222222222,
+      "social_isolation": 0.0075,
+      "safety_security": 0.005555555555555556,
+      "cultural_values": 0.12875,
+      "technology_dependence": 0.0
+    }
+  }
+}
