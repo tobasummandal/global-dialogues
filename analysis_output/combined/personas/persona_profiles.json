@@ -23,21 +23,21 @@
     }
   },
   "persona_1": {
-    "name": "The Balanced Social Participant",
+    "name": "The Consistent Social Responder",
     "description": "relatively optimistic about AI; displays variable response patterns; provides brief, focused responses; particularly focused on social connection and isolation",
     "size": 35344,
     "percentage": 59.35977965133855,
     "features": {
       "fear_index": 0.0015732335135588992,
       "PRI_Score": 0.04403997360494554,
-      "cosine_similarity": 0.6999999999999998,
+      "cosine_similarity": 0.7000000000000002,
       "economic_job_loss_fear": 0.0022802557276863614,
       "surveillance_control_fear": 0.00045308195358175743,
       "social_isolation_fear": 0.0032255574158199076,
       "safety_security_fear": 0.0005747039216330194,
       "cultural_values_fear": 0.0021790856227806516,
       "technology_dependence_fear": 0.0007267164398516992,
-      "response_length_norm": 0.04106616768959176
+      "response_length_norm": 0.041066167689591766
     },
     "dataset_distribution": {
       "GD2": 15819,
@@ -46,21 +46,21 @@
     }
   },
   "persona_2": {
-    "name": "The Consistent Social Responder",
+    "name": "The Balanced Social Participant",
     "description": "relatively optimistic about AI; displays variable response patterns; provides brief, focused responses; particularly focused on social connection and isolation",
     "size": 13241,
     "percentage": 22.238084041516913,
     "features": {
-      "fear_index": 0.04663585176212273,
+      "fear_index": 0.04663585176212272,
       "PRI_Score": 0.28633620288257156,
-      "cosine_similarity": 0.7000000000000001,
+      "cosine_similarity": 0.6999999999999997,
       "economic_job_loss_fear": 0.08875662998561296,
       "surveillance_control_fear": 0.0014285439583720673,
       "social_isolation_fear": 0.18011390630103183,
       "safety_security_fear": 0.002160504435784079,
       "cultural_values_fear": 0.004778964318462332,
       "technology_dependence_fear": 0.002576561573473088,
-      "response_length_norm": 0.0791725014496391
+      "response_length_norm": 0.07917250144963908
     },
     "dataset_distribution": {
       "GD1": 5844,

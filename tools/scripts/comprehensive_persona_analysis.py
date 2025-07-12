@@ -465,7 +465,7 @@ def create_persona_distribution_viz(personas, viz_dir):
         height=500
     )
     
-    fig.write_html(viz_dir / "persona_distribution.html")
+    fig.write_json(viz_dir / "persona_distribution.json")
     print("✓ Created persona distribution visualization")
 
 def create_feature_radar_viz(personas, feature_cols, viz_dir):
@@ -524,7 +524,7 @@ def create_feature_radar_viz(personas, feature_cols, viz_dir):
         font=dict(size=12)
     )
     
-    fig.write_html(viz_dir / "persona_feature_radar.html")
+    fig.write_json(viz_dir / "persona_feature_radar.json")
     print("✓ Created normalized persona feature radar chart")
 
 def create_correlation_heatmap(df, feature_cols, viz_dir):
@@ -542,7 +542,7 @@ def create_correlation_heatmap(df, feature_cols, viz_dir):
     )
     
     fig.update_layout(height=600)
-    fig.write_html(viz_dir / "feature_correlation_heatmap.html")
+    fig.write_json(viz_dir / "feature_correlation_heatmap.json")
     print("✓ Created correlation heatmap")
 
 def create_pca_visualization(df, feature_cols, viz_dir):
@@ -568,7 +568,7 @@ def create_pca_visualization(df, feature_cols, viz_dir):
     )
     
     fig.update_layout(height=500)
-    fig.write_html(viz_dir / "pca_visualization.html")
+    fig.write_json(viz_dir / "pca_visualization.json")
     print("✓ Created PCA visualization")
 
 def create_dataset_distribution_viz(df, viz_dir):
@@ -599,7 +599,7 @@ def create_dataset_distribution_viz(df, viz_dir):
     )
     
     fig.update_layout(height=500)
-    fig.write_html(viz_dir / "dataset_distribution.html")
+    fig.write_json(viz_dir / "dataset_distribution.json")
     print("✓ Created dataset distribution visualization")
 
 def create_regional_choropleth_map(df, feature_cols, viz_dir):
@@ -713,7 +713,7 @@ def create_regional_choropleth_map(df, feature_cols, viz_dir):
         showlegend=False
     )
     
-    fig.write_html(viz_dir / "regional_feature_choropleth.html")
+    fig.write_json(viz_dir / "regional_feature_choropleth.json")
     print("✓ Created regional choropleth map")
     
     # Also create a simple bar chart comparison
@@ -729,7 +729,7 @@ def create_regional_choropleth_map(df, feature_cols, viz_dir):
     )
     
     fig2.update_layout(height=600)
-    fig2.write_html(viz_dir / "regional_feature_comparison.html")
+    fig2.write_json(viz_dir / "regional_feature_comparison.json")
     print("✓ Created regional feature comparison chart")
 
 def save_results(df, personas, feature_cols, silhouette_score, output_dir):
@@ -818,7 +818,7 @@ Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
     print(f"  - Participant data: participant_persona_assignments.csv")
     print(f"  - Analysis summary: analysis_summary.json")
     print(f"  - Methodology report: methodology_report.md")
-    print(f"  - Visualizations: visualizations/ folder")
+    print(f"  - Visualizations: visualizations/ folder (JSON format)")
 
 def main():
     """Main analysis function"""

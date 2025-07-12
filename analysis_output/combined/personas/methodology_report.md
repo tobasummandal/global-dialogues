@@ -32,8 +32,8 @@ This analysis uses 10 comprehensive features to generate personas from combined 
 
 ## Persona Profiles
 - **The Balanced Dependency Participant**: 3947 participants (6.6%)
-- **The Balanced Social Participant**: 35344 participants (59.4%)
-- **The Consistent Social Responder**: 13241 participants (22.2%)
+- **The Consistent Social Responder**: 35344 participants (59.4%)
+- **The Balanced Social Participant**: 13241 participants (22.2%)
 - **The Balanced Security Participant**: 2023 participants (3.4%)
 - **The Consistent Cultural Responder**: 4987 participants (8.4%)
 
@@ -42,4 +42,4 @@ This analysis uses 10 comprehensive features to generate personas from combined 
 - GD1: 20994 participants
 - GD3: 16506 participants
 
-Generated on: 2025-07-11 14:36:10
+Generated on: 2025-07-11 20:25:34

@@ -1,6 +1,6 @@
 {
   "analysis_type": "Comprehensive Persona Analysis",
-  "timestamp": "2025-07-11T14:36:10.767012",
+  "timestamp": "2025-07-11T20:25:34.618946",
   "total_participants": 59542,
   "num_personas": 5,
   "features_used": [
@@ -28,12 +28,12 @@
       "percentage": 6.6
     },
     "persona_1": {
-      "name": "The Balanced Social Participant",
+      "name": "The Consistent Social Responder",
       "size": 35344,
       "percentage": 59.4
     },
     "persona_2": {
-      "name": "The Consistent Social Responder",
+      "name": "The Balanced Social Participant",
       "size": 13241,
       "percentage": 22.2
     },
